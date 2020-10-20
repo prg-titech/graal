@@ -181,6 +181,7 @@ final class InstrumentAccessor extends Accessor {
             Instrumenter instrumenter = instrumentationHandler.forLanguage(language);
             collectTo.add(instrumenter);
             AllocationReporter allocationReporter = instrumentationHandler.getAllocationReporter(InstrumentAccessor.langAccess().getLanguageInfo(language));
+            ObjectTracker objectTracker = new ObjectTracker(); // TODO
             collectTo.add(allocationReporter);
         }
 
