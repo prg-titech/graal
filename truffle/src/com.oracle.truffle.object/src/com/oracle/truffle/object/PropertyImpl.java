@@ -172,7 +172,6 @@ public class PropertyImpl extends Property {
     @Override
     public final void set(DynamicObject store, Object value, Shape oldShape, Shape newShape) throws IncompatibleLocationException {
         assert verifyShapeParameters(store, oldShape, newShape);
-        setReport(store, value);
         getLocation().set(store, value, oldShape, newShape);
     }
 
@@ -181,7 +180,6 @@ public class PropertyImpl extends Property {
     public final void setSafe(DynamicObject store, Object value, Shape oldShape, Shape newShape) {
         assert verifyShapeParameters(store, oldShape, newShape);
         try {
-            setReport(store, value);
             getLocation().set(store, value, oldShape, newShape);
         } catch (IncompatibleLocationException ex) {
             throw new IllegalStateException();
@@ -193,16 +191,10 @@ public class PropertyImpl extends Property {
     public final void setGeneric(DynamicObject store, Object value, Shape oldShape, Shape newShape) {
         assert verifyShapeParameters(store, oldShape, newShape);
         try {
-
-            setReport(store, value);
             getLocation().set(store, value, oldShape, newShape);
         } catch (IncompatibleLocationException ex) {
             setWithShapeSlowCase(store, value, oldShape, newShape);
         }
-    }
-
-    private void setReport(DynamicObject obj, Object value) {
-        System.out.println("New value is set. Obj: " + obj.toString() + " / Key: " + key + " / Value:" + value.toString());
     }
 
     /** @since 0.17 or earlier */

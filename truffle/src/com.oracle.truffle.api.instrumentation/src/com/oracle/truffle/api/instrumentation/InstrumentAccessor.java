@@ -183,6 +183,7 @@ final class InstrumentAccessor extends Accessor {
             AllocationReporter allocationReporter = instrumentationHandler.getAllocationReporter(InstrumentAccessor.langAccess().getLanguageInfo(language));
             ObjectTracker objectTracker = new ObjectTracker(); // TODO
             collectTo.add(allocationReporter);
+            collectTo.add(objectTracker);
         }
 
         @Override

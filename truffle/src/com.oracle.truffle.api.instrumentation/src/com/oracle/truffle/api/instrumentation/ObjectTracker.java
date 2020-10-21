@@ -29,7 +29,7 @@ public class ObjectTracker {
     public void notifyAssignment(Object object, Object key, Object value) {
         CompilerAsserts.partialEvaluationConstant(this);
 
-        System.out.println("notifyAssignment: Object: " + object + " / Key: " + key + " Value: ");
+        System.out.println("notifyAssignment: Object: " + object + " / Key: " + key + " Value: " + value);
 
         if (listeners != null) {
             ObjectChangeListener[] ls = listeners;
