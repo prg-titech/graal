@@ -11,7 +11,7 @@ public class ObjectTracker {
 
     public ObjectTracker() {}
 
-    void addListener(ObjectChangeListener l) {
+    public void addListener(ObjectChangeListener l) {
         CompilerAsserts.neverPartOfCompilation();
         synchronized (this) {
             if (listeners == null) {
