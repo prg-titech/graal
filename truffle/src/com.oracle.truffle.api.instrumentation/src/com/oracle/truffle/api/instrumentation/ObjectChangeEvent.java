@@ -1,11 +1,11 @@
 package com.oracle.truffle.api.instrumentation;
 
-public class FieldReassignedEvent {
+public class ObjectChangeEvent {
     private final Object object;
     private final Object key;
     private final Object value;
 
-    FieldReassignedEvent(Object object, Object key, Object value) {
+    ObjectChangeEvent(Object object, Object key, Object value) {
         this.object = object;
         this.key = key;
         this.value = value;

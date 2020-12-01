@@ -64,7 +64,7 @@ public class ObjectTracker {
 
         if (listeners != null) {
             ObjectChangeListener[] ls = listeners;
-            FieldReassignedEvent e = new FieldReassignedEvent(object, key, value);
+            ObjectChangeEvent e = new ObjectChangeEvent(object, key, value);
             for (ObjectChangeListener listener : ls) {
                 listener.onFieldAssigned(e);
             }
