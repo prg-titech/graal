@@ -30,7 +30,7 @@ public class ObjectTracker {
         }
     }
 
-    void removeListener(ObjectChangeListener l) {
+    public void removeListener(ObjectChangeListener l) {
         CompilerAsserts.neverPartOfCompilation();
         synchronized (this) {
             final int len = listeners.length;
